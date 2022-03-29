@@ -1,6 +1,7 @@
 package com.pbussolutions.plugins
 
 import com.pbussolutions.domain.model.UserSession
+import io.ktor.http.ContentDisposition.Companion.File
 import io.ktor.server.application.*
 import io.ktor.server.sessions.*
 import io.ktor.util.*
