@@ -4,6 +4,7 @@ import com.pbussolutions.domain.model.ApiResponse
 import com.pbussolutions.domain.model.Endpoint
 import com.pbussolutions.domain.model.UserSession
 import com.pbussolutions.domain.repository.UserDataSource
+import com.pbussolutions.routes.ApiConstants.AUTH_SESSION
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.auth.*
@@ -15,7 +16,7 @@ fun Route.getUserInfoRoute(
     userDataSource: UserDataSource
 ) {
     // TODO: 4/2/22 Set auth-session as constant
-    authenticate("auth-session") {
+    authenticate(AUTH_SESSION) {
         get(Endpoint.GetUserInfo.path) {
             val userSession = call.principal<UserSession>()
             if(userSession == null) {
