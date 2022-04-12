@@ -24,7 +24,7 @@ def session_cleanup():
             current_session_path = ".sessions\\" + session.split("\\", 2)[1]
             print(current_session_path)
 
-        print(expiry_time
+        print(expiry_time)
 
 
 schedule.every(15).minutes.do(session_cleanup)
